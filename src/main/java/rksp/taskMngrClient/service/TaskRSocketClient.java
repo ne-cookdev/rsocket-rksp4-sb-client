@@ -17,7 +17,7 @@ public class TaskRSocketClient {
 
     public Mono<Task> getTask(Long taskId) {
         return requester.route("tasks.get")
-                .data(String.valueOf(taskId))
+                .data(taskId)
                 .retrieveMono(Task.class);
     }
 
